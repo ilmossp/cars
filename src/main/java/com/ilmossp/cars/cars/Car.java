@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class Car {
     @Id
     @GeneratedValue
-    private Integer Id;
+    private Integer id;
 
     private String marque;
 

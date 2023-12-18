@@ -10,19 +10,19 @@ public class CarService {
     @Autowired
     private CarRepo carRepo;
 
-    public List<Car> getAllCars(){
+    public List<Car> getAllCars() {
         return carRepo.findAll();
     }
 
-    public Car getCarById(Integer id){
+    public Car getCarById(Integer id) {
         return carRepo.findById(id).orElse(null);
     }
 
-    public Car addCar(Car car){
+    public Car addCar(Car car) {
         return carRepo.save(car);
     }
 
-    public Car updateCar(Car car){
+    public Car updateCar(Car car) {
         Car existingCar = carRepo.findById(car.getId()).orElse(null);
         existingCar.setAnnee(car.getAnnee());
         existingCar.setCouleur(car.getCouleur());
@@ -32,7 +32,7 @@ public class CarService {
         return carRepo.save(existingCar);
     }
 
-    public void deleCarByID(Integer id){
+    public void deleCarByID(Integer id) {
             carRepo.deleteById(id);
     }
 

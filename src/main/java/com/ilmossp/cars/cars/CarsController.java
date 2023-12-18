@@ -21,7 +21,7 @@ public class CarsController {
     @Autowired
     private CarService carService;
 
-    public CarService getCarService(){
+    public CarService getCarService() {
         return this.carService;
     }
 
@@ -31,23 +31,23 @@ public class CarsController {
         return carService.getAllCars();
     }
 
-    @GetMapping(path="/{id}")
-    public Car getCarById(Integer id){
+    @GetMapping(path = "/{id}")
+    public Car getCarById(Integer id) {
         return carService.getCarById(id);
     }
 
     @PostMapping(path = "")
-    public Car addCar(@RequestBody Car car){
+    public Car addCar(@RequestBody Car car) {
         return carService.addCar(car);
     }
 
     @PutMapping(path = "")
-    public Car updateCar(@RequestBody Car car){
+    public Car updateCar(@RequestBody Car car) {
         return carService.updateCar(car);
     }
 
     @DeleteMapping(path = "/{id}")
-    public void deleteCar(Integer id){
+    public void deleteCar(Integer id) {
          carService.deleCarByID(id);
     }
 
