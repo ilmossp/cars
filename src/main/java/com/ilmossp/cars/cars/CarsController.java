@@ -19,7 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 RequestMethod.OPTIONS})
 public class CarsController {
     @Autowired
-    CarService carService;
+    private CarService carService;
+
+    public CarService getCarService(){
+        return this.carService;
+    }
+
 
     @GetMapping(path = "")
     public List<Car> getAllCars() {
